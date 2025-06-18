@@ -74,14 +74,3 @@ npm run dev
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 
 ---
-
-## 👤 Autor
-
-**Carlos Andrés Jaramillo Patiño**  
-🔗 [GitHub](https://github.com/candesjara)
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia [ISC](https://opensource.org/licenses/ISC).
