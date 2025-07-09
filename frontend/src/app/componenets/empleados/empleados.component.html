@@ -1,37 +1,102 @@
+<!-- Contenedor principal de la vista -->
 <div class="container">
   <div class="row">
+
+    <!-- Columna izquierda: formulario de empleados -->
     <div class="col s5">
       <div class="card">
         <div class="card-content">
+
+          <!-- Formulario para agregar o editar empleados -->
+          <!-- #empleadoForm es una referencia local al formulario -->
+          <!-- (ngSubmit) llama al método agregarEmpleado del componente -->
           <form #empleadoForm="ngForm" (ngSubmit)="agregarEmpleado(empleadoForm)">
+
+            <!-- ⚠️ Campo oculto que contiene el _id del empleado -->
+            <!-- Este campo es crucial para que Angular lo incluya en el objeto al enviar -->
+            <!-- Sin este campo, el formulario siempre parecerá "nuevo", y se hará un POST en vez de PUT -->
+            <input type="hidden"
+                   name="_id"
+                   [(ngModel)]="empleadoService.selectedEmpleado._id">
+
+            <!-- Campo: Nombre del empleado -->
             <div class="input-field">
-              <input type="text" name="name" [(ngModel)]="empleadoService.selectedEmpleado.name" placeholder="Nombre">
+              <input type="text"
+                     name="name"
+                     [(ngModel)]="empleadoService.selectedEmpleado.name"
+                     placeholder="Nombre"
+                     required>
             </div>
 
+            <!-- Campo: Cargo del empleado -->
             <div class="input-field">
-              <input type="text" name="position" [(ngModel)]="empleadoService.selectedEmpleado.position" placeholder="Cargo">
+              <input type="text"
+                     name="position"
+                     [(ngModel)]="empleadoService.selectedEmpleado.position"
+                     placeholder="Cargo"
+                     required>
             </div>
 
+            <!-- Campo: Oficina del empleado -->
             <div class="input-field">
-              <input type="text" name="office" [(ngModel)]="empleadoService.selectedEmpleado.office" placeholder="Oficina">
+              <input type="text"
+                     name="office"
+                     [(ngModel)]="empleadoService.selectedEmpleado.office"
+                     placeholder="Oficina"
+                     required>
             </div>
 
+            <!-- Campo: Salario del empleado -->
             <div class="input-field">
-              <input type="number" name="salary" [(ngModel)]="empleadoService.selectedEmpleado.salary" placeholder="Salario">
+              <input type="number"
+                     name="salary"
+                     [(ngModel)]="empleadoService.selectedEmpleado.salary"
+                     placeholder="Salario"
+                     required
+                     min="0">
             </div>
 
+            <!-- Botones de acción: Guardar y Limpiar -->
             <div class="card-action">
               <button class="btn blue" type="submit">Guardar</button>
               <button class="btn grey" type="button" (click)="resetForm(empleadoForm)">Limpiar</button>
             </div>
+
           </form>
         </div>
       </div>
     </div>
 
+    <!-- Columna derecha: lista de empleados -->
     <div class="col s7">
-      <!-- Aquí puedes agregar la lista de empleados más adelante -->
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cargo</th>
+            <th>Oficina</th>
+            <th>Salario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Itera sobre la lista de empleados -->
+          <tr *ngFor="let emp of empleadoService.empleados">
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.position }}</td>
+            <td>{{ emp.office }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>
+              <!-- Botón para cargar el empleado en el formulario y editar -->
+              <button class="btn orange" (click)="editarEmpleado(emp)">Editar</button>
+
+              <!-- Botón para eliminar el empleado por ID -->
+              <button class="btn red" (click)="eliminarEmpleado(emp._id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
   </div>
 </div>
-
