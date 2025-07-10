@@ -26,11 +26,18 @@ empleadoCtrl.getEmpleados = async (req, res) => {
  * Ruta: /api/empleados
  */
 empleadoCtrl.createEmpleados = async (req, res) => {
-    const empleado = new Empleado(req.body); // Crea un nuevo documento a partir del cuerpo de la solicitud
-    await empleado.save(); // Guarda en la base de datos
-    res.json({
-        status: 'Empleado guardado'
-    });
+    try {
+    // ⚠️ Eliminar el _id si es una cadena vacía
+    if (req.body._id === '') {
+      delete req.body._id;
+    }
+
+    const empleado = new Empleado(req.body);
+    await empleado.save();
+    res.status(201).json(empleado);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
 /**
