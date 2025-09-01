@@ -151,7 +151,7 @@ Para correr los tests, utiliza el comando:
 ```bash
 npm test
 📋 Cobertura de las pruebas
-
+```
 Actualmente se validan los siguientes casos:
 
 getEmpleados → Devuelve todos los empleados.
