@@ -1,7 +1,6 @@
-
 # 📦 nodejs_test
 
-Proyecto backend básico con **Node.js**, **Express** y **MongoDB**, diseñado para gestionar empleados mediante una **API RESTful** con operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
+Proyecto fullstack básico con **Node.js**, **Express**, **MongoDB** y **Angular 13**, diseñado para gestionar empleados mediante una **API RESTful** con operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
 
 ---
 
@@ -10,17 +9,43 @@ Proyecto backend básico con **Node.js**, **Express** y **MongoDB**, diseñado p
 ```
 nodejs_test/
 │
-├── backend/
+├── backend/                        # Servidor con Node.js + Express + MongoDB
 │   ├── controllers/
 │   │   └── empleado.controller.js   # Lógica de negocio de empleados
 │   ├── models/
 │   │   └── empleado.js              # Esquema de Mongoose
 │   ├── routes/
 │   │   └── empleado.route.js        # Rutas REST del recurso empleado
+│   ├── tests/
+│   │   └── empleado.controller.test.js # Pruebas unitarias con Jest
 │   ├── database.js                  # Conexión a MongoDB
 │   └── index.js                     # Punto de entrada del servidor
 │
-├── package.json                     # Dependencias y scripts
+├── frontend/                        # Aplicación Angular 13
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/empleados/
+│   │   │   │   ├── empleados.component.ts
+│   │   │   │   ├── empleados.component.html
+│   │   │   │   ├── empleados.component.css
+│   │   │   │   └── empleados.component.spec.ts
+│   │   │   ├── models/
+│   │   │   │   ├── empleado.ts
+│   │   │   │   └── empleado.spec.ts
+│   │   │   ├── service/
+│   │   │   │   ├── empleado.service.ts
+│   │   │   │   └── empleado.service.spec.ts
+│   │   │   ├── app.component.ts
+│   │   │   ├── app.component.html
+│   │   │   ├── app.component.css
+│   │   │   └── app.module.ts
+│   │   ├── assets/
+│   │   ├── environments/
+│   │   ├── index.html
+│   │   └── styles.css
+│   └── angular.json
+│
+├── package.json                     # Dependencias y scripts (backend)
 └── README.md                        # Documentación del proyecto
 ```
 
@@ -28,11 +53,13 @@ nodejs_test/
 
 ## 🚀 Instalación y Ejecución
 
+### 🔹 Backend (Node.js + Express + MongoDB)
+
 1. Clona el repositorio:
 
 ```bash
 git clone https://github.com/candesjara/nodejs_test.git
-cd nodejs_test
+cd nodejs_test/backend
 ```
 
 2. Instala las dependencias:
@@ -48,6 +75,36 @@ npm install
 ```bash
 npm run dev
 ```
+
+5. Ejecuta las pruebas unitarias (opcional):
+
+```bash
+npm test
+```
+
+---
+
+### 🔹 Frontend (Angular 13)
+
+1. Ve a la carpeta del frontend:
+
+```bash
+cd ../frontend
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecuta la aplicación Angular:
+
+```bash
+ng serve -o
+```
+
+Esto abrirá la aplicación en `http://localhost:4200`.
 
 ---
 
@@ -65,6 +122,7 @@ npm run dev
 
 ## 🧰 Tecnologías utilizadas
 
+### Backend:
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
@@ -72,5 +130,12 @@ npm run dev
 - [Morgan](https://www.npmjs.com/package/morgan)
 - [CORS](https://www.npmjs.com/package/cors)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Jest](https://jestjs.io/)
+
+### Frontend:
+- [Angular 13](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [RxJS](https://rxjs.dev/)
+- [Bootstrap](https://getbootstrap.com/) (opcional para estilos)
 
 ---
