@@ -139,3 +139,29 @@ Esto abrirá la aplicación en `http://localhost:4200`.
 - [Bootstrap](https://getbootstrap.com/) (opcional para estilos)
 
 ---
+
+## 🧪 Pruebas unitarias
+
+El proyecto incluye pruebas unitarias implementadas con **Jest** para validar la lógica del controlador de empleados.
+
+### ▶️ Ejecutar pruebas
+
+Para correr los tests, utiliza el comando:
+
+```bash
+npm test
+📋 Cobertura de las pruebas
+
+Actualmente se validan los siguientes casos:
+
+getEmpleados → Devuelve todos los empleados.
+
+createEmpleado → Crea un nuevo empleado y devuelve status 201.
+
+getUnicoEmpleado → Devuelve un empleado por su ID.
+
+editarEmpleado → Actualiza un empleado existente.
+
+eliminarEmpleado → Borra un empleado por su ID.
+
+Al ejecutar npm test, deberías ver que todas las pruebas pasan correctamente ✅.
