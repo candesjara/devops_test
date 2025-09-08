@@ -1,6 +1,6 @@
 # 📦 nodejs_test
 
-Proyecto fullstack básico con **Node.js**, **Express**, **MongoDB** y **Angular 13**, diseñado para gestionar empleados mediante una **API RESTful** con operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
+Proyecto fullstack básico con **Node.js**, **Express**, **MongoDB** y **Angular 13**, diseñado para gestionar empleados mediante una **API RESTful** con operaciones CRUD (Crear, Leer, Actualizar y Eliminar). Incluye pruebas Unitarias en BackEnd y FrontEnd
 
 ---
 
@@ -136,7 +136,6 @@ Esto abrirá la aplicación en `http://localhost:4200`.
 - [Angular 13](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [RxJS](https://rxjs.dev/)
-- [Bootstrap](https://getbootstrap.com/) (opcional para estilos)
 
 ---
 
