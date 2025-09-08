@@ -142,27 +142,47 @@ Esto abrirá la aplicación en `http://localhost:4200`.
 
 ## 🧪 Pruebas unitarias
 
-El proyecto incluye pruebas unitarias implementadas con **Jest** para validar la lógica del controlador de empleados.
+El proyecto incluye pruebas unitarias para **backend y frontend**.
 
-### ▶️ Ejecutar pruebas
+### ▶️ Backend (Jest)
 
-Para correr los tests, utiliza el comando:
+Las pruebas del backend están implementadas con **Jest** y validan la lógica del controlador de empleados.
+
+Ejecutar pruebas:
 
 ```bash
 npm test
 ```
-## 📋 Cobertura de las pruebas
 
-Actualmente se validan los siguientes casos:
+#### 📋 Cobertura de las pruebas Backend
 
-getEmpleados → Devuelve todos los empleados.
+- getEmpleados → Devuelve todos los empleados.
+- createEmpleado → Crea un nuevo empleado y devuelve status 201.
+- getUnicoEmpleado → Devuelve un empleado por su ID.
+- editarEmpleado → Actualiza un empleado existente.
+- eliminarEmpleado → Borra un empleado por su ID.
 
-createEmpleado → Crea un nuevo empleado y devuelve status 201.
+---
 
-getUnicoEmpleado → Devuelve un empleado por su ID.
+### ▶️ Frontend (Karma + Jasmine)
 
-editarEmpleado → Actualiza un empleado existente.
+Las pruebas del frontend están implementadas con **Karma y Jasmine** y validan la lógica del componente `EmpleadosComponent` y su interacción con el servicio.
 
-eliminarEmpleado → Borra un empleado por su ID.
+Ejecutar pruebas:
 
-Al ejecutar npm test, deberías ver que todas las pruebas pasan correctamente ✅.
+```bash
+ng test
+```
+
+#### 📋 Cobertura de las pruebas Frontend
+
+- Creación del componente `EmpleadosComponent`.
+- Llamado automático a `obtenerEmpleados()` en `ngOnInit`.
+- Agregar un empleado nuevo si no tiene `_id`.
+- Actualizar un empleado si tiene `_id`.
+- Resetear el formulario y el empleado seleccionado.
+- Eliminar un empleado y mostrar notificación con `Materialize.toast`.
+
+---
+
+✅ Al ejecutar los tests en **backend** y **frontend**, deberías ver que todas las pruebas pasan correctamente.
