@@ -4,7 +4,7 @@ Proyecto fullstack básico con **Node.js**, **Express**, **MongoDB** y **Angular
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del Proyecto.
 
 ```
 nodejs_test/
