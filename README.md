@@ -1,4 +1,4 @@
-# 📦 nodejs_test
+# 📦 DEVOPS TEST
 
 Proyecto fullstack básico con **Node.js**, **Express**, **MongoDB** y **Angular 13**, diseñado para gestionar empleados mediante una **API RESTful** con operaciones CRUD (Crear, Leer, Actualizar y Eliminar). Incluye pruebas Unitarias en BackEnd y FrontEnd
 
