@@ -1,5 +1,5 @@
 {
-  "name": "nodejs_test",
+  "name": "devops_test",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/candesjara/nodejs_test.git"
+    "url": "git+https://github.com/candesjara/devops_test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/candesjara/nodejs_test/issues"
+    "url": "https://github.com/candesjara/devops_test/issues"
   },
-  "homepage": "https://github.com/candesjara/nodejs_test#readme",
+  "homepage": "https://github.com/candesjara/devops_test#readme",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
