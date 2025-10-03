@@ -1,18 +1,28 @@
-version: '3.8'
-
 services:
-  app:
-    build: .
-    container_name: empleados-app
+  backend:
+    build:
+      context: .           # contexto de toda la raíz del proyecto
+      dockerfile: backend/Dockerfile  # ruta relativa al Dockerfile
+    container_name: empleados-backend
     ports:
       - "3000:3000"
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/empleados
     depends_on:
       - mongo
+    environment:
+      MONGO_URI: "mongodb://mongo:27017/empleadosdb"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: empleados-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
 
   mongo:
-    image: mongo:6
+    image: mongo:7
     container_name: empleados-mongo
     ports:
       - "27017:27017"

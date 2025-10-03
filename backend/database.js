@@ -8,10 +8,10 @@
 const mongoose = require('mongoose'); // Importamos el ODM Mongoose para trabajar con MongoDB
 
 // URI de conexión a la base de datos (en este caso, una base local llamada 'empleados')
-const URI = 'mongodb://localhost:27017/empleados';
+const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/empleados';
 
 // Conexión a MongoDB
-mongoose.connect(URI)
+mongoose.connect(mongoUrl)
     .then(db => console.log('DB is connected'))        // Mensaje en consola si la conexión es exitosa
     .catch(err => console.error(err));                 // En caso de error, se muestra en consola
 
